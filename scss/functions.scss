@@ -1,27 +1,48 @@
+// =============================================================================
+// Functions
+//
+// Table of contents:
+// 1. Get breakpoint Names list
+// 2. Get breakpoint Values list
+// 3. Get breakpoint Groups list with min and max values
+// 4. Get the Respond-to breakpoint
+//
+// =============================================================================
 
-// Breakpoint Names list
+// =============================================================================
+// 1. Get breakpoint Names list
 // =============================================================================
 
 @function getBreakpointNames($breakpoints) {
 	$names: ();
 	@for $i from 1 through length($breakpoints) {
-		$names: join($names, nth(nth($breakpoints,$i),1));
+		@if type-of(nth(nth($breakpoints,$i),1)) == string {
+			$names: join($names, nth(nth($breakpoints,$i),1));
+		} @else {
+			@warn '[ERROR] "' + nth(nth($breakpoints,$i),1) + '" is not a valid breakipoint name';
+		}
 	}
 	@return $names;
 }
 
-// Breakpoint Values list
+// =============================================================================
+// 2. Get breakpoint Values list
 // =============================================================================
 
 @function getBreakpointValues($breakpoints) {
 	$values: ();
 	@for $i from 1 through length($breakpoints) {
-		$values: join($values, nth(nth($breakpoints,$i),2));
+		@if type-of(nth(nth($breakpoints,$i),2)) == number {
+			$values: join($values, nth(nth($breakpoints,$i),2));
+		} @else {
+			@warn '[ERROR] "' + nth(nth($breakpoints,$i),2) + '" is not a valid breakipoint value';
+		}
 	}
 	@return $values;
 }
 
-// Breakpoint Groups list with min and max values
+// =============================================================================
+// 3. Get breakpoint Groups list with min and max values
 // =============================================================================
 
 @function createBreakpointGroups($breakpoint-names, $breakpoint-values) {
@@ -54,7 +75,8 @@
 	@return $groups;
 }
 
-// Get the Breakpoint
+// =============================================================================
+// 4. Get the Respond-to breakpoint
 // =============================================================================
 
 @function getBreakpointInfo($breakpoint) {
@@ -90,5 +112,6 @@
 		}
 	}
 
-	@warn '"' + $breakpoint + '"" is not a valid parameter. Please, check the breakpoint name and make sure you used -only, -and-up, or -and-below]';
+	@warn '[ERROR] "' + $breakpoint + '"" is not a valid parameter. Please, check the breakpoint name and also make sure you used -only, -and-up, or -and-below]';
+	@return 'error';
 }
