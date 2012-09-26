@@ -1,0 +1,181 @@
+// =============================================================================
+// Respond-to Test Bed
+//
+// =============================================================================
+
+@import "respond-to";
+
+@include respond-to-breakpoints( mobile-portrait 320px,
+								 mobile-landscape 480px,
+								 tablet-portrait 600px,
+								 tablet-landscape 768px,
+								 desktop 992px);
+
+
+$green: #a7e040;
+
+body {
+	font: 16px/21px 'Helvetica Neue', Arial, sans-serif;
+}
+
+.wrapper {
+	margin: 0 auto;
+	padding: 0 1em;
+	max-width: 1000px;
+}
+
+// =============================================================================
+// Respond-to Media Queries
+// =============================================================================
+
+@mixin is-responding {
+	// Make it green!
+	background: $green;
+	color: white;
+	// Show isResponding and hide is Inactive
+	.isResponding 	{ display: inline; }
+	.isInactive 	{ display: none; }
+}
+
+.mq-mixins-test {
+
+	width: 100%;
+
+	tbody {
+
+		.response-example {
+			text-align: center;
+			color: #ccc;
+			.isResponding { display: none; }
+		}
+
+		// Only
+		// =============================================================================
+
+		.respond-to-mobile {
+			@include respond-to(mobile-only) {
+				@include is-responding;
+			}
+		}
+		.respond-to-mobile-portrait {
+			@include respond-to(mobile-portrait-only) {
+				@include is-responding;
+			}
+		}
+		.respond-to-mobile-landscape {
+			@include respond-to(mobile-landscape-only) {
+				@include is-responding;
+			}
+		}
+
+		.respond-to-tablet {
+			@include respond-to(tablet-only) {
+				@include is-responding;
+			}
+		}
+
+		.respond-to-tablet-portrait {
+			@include respond-to(tablet-portrait-only) {
+				@include is-responding;
+			}
+		}
+
+		.respond-to-tablet-landscape {
+			@include respond-to(tablet-landscape-only) {
+				@include is-responding;
+			}
+		}
+
+		.respond-to-desktop {
+			@include respond-to(desktop-only) {
+				@include is-responding;
+			}
+		}
+
+		// And Up
+		// =============================================================================
+
+		.respond-to-mobile-and-up {
+			@include respond-to(mobile-and-up) {
+				@include is-responding;
+			}
+		}
+		.respond-to-mobile-portrait-and-up {
+			@include respond-to(mobile-portrait-and-up) {
+				@include is-responding;
+			}
+		}
+		.respond-to-mobile-landscape-and-up {
+			@include respond-to(mobile-landscape-and-up) {
+				@include is-responding;
+			}
+		}
+
+		.respond-to-tablet-and-up {
+			@include respond-to(tablet-and-up) {
+				@include is-responding;
+			}
+		}
+
+		.respond-to-tablet-portrait-and-up {
+			@include respond-to(tablet-portrait-and-up) {
+				@include is-responding;
+			}
+		}
+
+		.respond-to-tablet-landscape-and-up {
+			@include respond-to(tablet-landscape-and-up) {
+				@include is-responding;
+			}
+		}
+
+		.respond-to-desktop-and-up {
+			@include respond-to(desktop-and-up) {
+				@include is-responding;
+			}
+		}
+
+		// And Below
+		// =============================================================================
+
+		.respond-to-mobile-and-below {
+			@include respond-to(mobile-and-below) {
+				@include is-responding;
+			}
+		}
+		.respond-to-mobile-portrait-and-below {
+			@include respond-to(mobile-portrait-and-below) {
+				@include is-responding;
+			}
+		}
+		.respond-to-mobile-landscape-and-below {
+			@include respond-to(mobile-landscape-and-below) {
+				@include is-responding;
+			}
+		}
+
+		.respond-to-tablet-and-below {
+			@include respond-to(tablet-and-below) {
+				@include is-responding;
+			}
+		}
+
+		.respond-to-tablet-portrait-and-below {
+			@include respond-to(tablet-portrait-and-below) {
+				@include is-responding;
+			}
+		}
+
+		.respond-to-tablet-landscape-and-below {
+			@include respond-to(tablet-landscape-and-below) {
+				@include is-responding;
+			}
+		}
+
+		.respond-to-desktop-and-below {
+			@include respond-to(desktop-and-below) {
+				@include is-responding;
+			}
+		}
+	}
+}

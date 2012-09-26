@@ -1,0 +1,83 @@
+// =============================================================================
+// Media Queries
+//
+// Magic media queries for your Compass project. You define the breakpoints,
+// Respond-to takes care of the rest.
+//
+// More info, installation and usage:
+// https://github.com/danielguillan/respond-to
+//
+// Table of contents:
+// 1. Variables
+// 2. Initialization
+// 3. Breakpoint Groups
+// 4. Respond-to mixin
+//
+// =============================================================================
+
+@import 'functions';
+
+// =============================================================================
+// 1. Variables
+// =============================================================================
+
+$respond-to-breakpoints: 	mobile-portrait 320px,
+							mobile-landscape 480px,
+							tablet-portrait 600px,
+							tablet-landscape 768px,
+							desktop 992px!default;
+
+$breakpoint-names: ();
+$breakpoint-values: ();
+$breakpoint-groups: ();
+
+// =============================================================================
+// 2. Initialization
+// =============================================================================
+
+@mixin respond-to-breakpoints($breakpoints...) {
+	$breakpoint-names: getBreakpointNames($breakpoints);
+	$breakpoint-values: getBreakpointValues($breakpoints);
+	$breakpoint-groups: createBreakpointGroups($breakpoint-names,$breakpoint-values);
+}
+
+// =============================================================================
+// 3. Respond-to mixin
+// =============================================================================
+
+@mixin respond-to($breakpoint) {
+
+	$breakpoint-info: getBreakpointInfo($breakpoint);
+	$breakpoint-name: nth($breakpoint-info, 1);
+	$breakpoint-extend: nth($breakpoint-info, 2);
+	$breakpoint-group: nth($breakpoint-info, 3);
+	$breakpoint-group-id: nth($breakpoint-info, 4);
+
+	$min-width: 0;
+	$max-width: 0;
+
+	// If it's a regular breakpoint
+	@if $breakpoint-group == false {
+		$min-width: nth($breakpoint-values, index($breakpoint-names, $breakpoint-name));
+
+		// Only set a max-width if it's not the last breakpoint
+		@if (index($breakpoint-names, $breakpoint-name) + 1) <= length($breakpoint-values) {
+			$max-width: nth($breakpoint-values, (index($breakpoint-names, $breakpoint-name) + 1));
+		} @else {
+			$breakpoint-extend: and-up;
+		}
+
+	// If it's a breakpoint group
+	}@else {
+		$min-width: nth( nth($breakpoint-groups, $breakpoint-group-id), 2);
+		$max-width: nth( nth($breakpoint-groups, $breakpoint-group-id), 3);
+	}
+
+	@if $breakpoint-extend == only {
+		@media (min-width: $min-width) and (max-width: $max-width) { @content; }
+	} @else if $breakpoint-extend == and-up {
+		@media (min-width: $min-width) { @content; }
+	} @else if $breakpoint-extend == and-below {
+		@media (max-width: $max-width) { @content; }
+	}
+}

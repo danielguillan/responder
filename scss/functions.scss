@@ -1,0 +1,94 @@
+
+// Breakpoint Names list
+// =============================================================================
+
+@function getBreakpointNames($breakpoints) {
+	$names: ();
+	@for $i from 1 through length($breakpoints) {
+		$names: join($names, nth(nth($breakpoints,$i),1));
+	}
+	@return $names;
+}
+
+// Breakpoint Values list
+// =============================================================================
+
+@function getBreakpointValues($breakpoints) {
+	$values: ();
+	@for $i from 1 through length($breakpoints) {
+		$values: join($values, nth(nth($breakpoints,$i),2));
+	}
+	@return $values;
+}
+
+// Breakpoint Groups list with min and max values
+// =============================================================================
+
+@function createBreakpointGroups($breakpoint-names, $breakpoint-values) {
+	$groups: ();
+	$total-groups: 0;
+	$last: 0;
+
+	@for $i from 1 through length($breakpoint-names) {
+		$group: regex(nth($breakpoint-names,$i), '([a-z]+)?\-');
+		$repeated: false;
+
+		@if $group != '' {
+
+			// Check if we already found this group
+			@each $saved-group in $groups {
+				@if $group == nth($saved-group, 1) {
+					$repeated: true;
+				}
+			}
+
+			// If this is a new group add it to the list
+			@if $repeated != true {
+				$group: join($group, nth($breakpoint-values, $i) nth($breakpoint-values, ($i + 2)), space);
+				$groups: append($groups, $group , comma );
+				$total-groups: $total-groups + 1;
+			}
+		}
+	}
+
+	@return $groups;
+}
+
+// Get the Breakpoint
+// =============================================================================
+
+@function getBreakpointInfo($breakpoint) {
+
+	// capture the extend (only, and-up or and-below)
+	$extend: regex($breakpoint, '((and-)?[a-z]+)$');
+
+	// capture the breakpoint name
+	$root: regex($breakpoint, '(.*?)-'+ $extend + '$');
+
+	// Check if it's a normal breakpoint
+	@for $i from 1 through length($breakpoint-names) {
+
+		@if $root == nth($breakpoint-names, $i) {
+			$group: false;
+			$groupid: false;
+			$br: join($root, $extend, space);
+			$br: join($br, $group, space);
+			$br: join($br, $groupid, space);
+			@return $br;
+		}
+	}
+
+	// Check if it's a group
+	@for $i from 1 through length($breakpoint-groups) {
+		@if $root == nth(nth($breakpoint-groups, $i),1) {
+			$group: true;
+			$groupid: $i;
+			$br: join($root, $extend, space);
+			$br: join($br, $group, space);
+			$br: join($br, $groupid, space);
+			@return $br;
+		}
+	}
+
+	@warn '"' + $breakpoint + '"" is not a valid parameter. Please, check the breakpoint name and make sure you used -only, -and-up, or -and-below]';
+}
