@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__),"../lib/respondto")
+require File.join(File.dirname(__FILE__),"../lib/responder")
 
 project_type = :stand_alone
 http_path = "/"

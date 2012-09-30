@@ -1,22 +1,22 @@
-# Respond-to
+# Responder
 
-Magic media queries for your Compass project. You define the breakpoints, Respond-to takes care of the rest.
+Magic media queries for your Compass project. You define the breakpoints, Responder takes care of the rest.
 
-Forget about multiple variable declarations, long lists of unmanageable, inextensible and unreusable mixins. Respond-to is the only media queries mixin you'll ever need. And it's always ready to use.
+Forget about multiple variable declarations, long lists of unmanageable, inextensible and unreusable mixins. Responder is the only media queries mixin you'll ever need. And it's always ready to use.
 
 ## Installation
 
 Install the respond-to gem:
 
-    $ gem install respond-to
+    $ gem install responder
 
 In your project's config.rb file add:
 
-	require "respond-to"
+	require "responder"
 
 Finally install the Compass extension:
 
-	$ compass install respond-to
+	$ compass install responder
 
 ## Usage
 
@@ -80,9 +80,9 @@ For each breakpoint you've defined you now have 3 available parameters for the r
 
 #### Breakpoint Groups
 
-You might have noticed from the example above that we where able to `respond-to(mobile-only)`, but how? We didn't define any mobile (only) breakpoint in our list. Well, that's some of the magic behind Respond-to. It automatically creates breakpoint groups based on your breakpoint names.
+You might have noticed from the example above that we where able to `respond-to(mobile-only)`, but how? We didn't define any mobile (only) breakpoint in our list. Well, that's some of the magic behind Responder. It automatically creates breakpoint groups based on your breakpoint names.
 
-Groups are sets of breakpoints whose names share the same root followed by a dash (-). For example `mobile` is the group Respond-to creates for the `mobile-portrait` and `mobile-landscape` breakpoints.
+Groups are sets of breakpoints whose names share the same root followed by a dash (-). For example `mobile` is the group Responder creates for the `mobile-portrait` and `mobile-landscape` breakpoints.
 
 Given the example breakpoint list above, `respond-to(mobile-only)` will output the following css:
 
@@ -90,15 +90,15 @@ Given the example breakpoint list above, `respond-to(mobile-only)` will output t
 
 min-width value is the first breakpoint of the group and max-width is the last one. It's that simple.
 
-**NOTE:** You can define more than two breakpoints per group, Respond-to will pick the smallest breakpoint and the bigger breakpoint to create the group.
+**NOTE:** You can define more than two breakpoints per group, Responder will pick the smallest breakpoint and the bigger breakpoint to create the group.
 
 ### 3. There's no #3. Enjoy and build amazing stuff
 
-… And contribute to make Respond-to even better!
+… And contribute to make Responder even better!
 
 
 ## What's next?
 
 - Respond-to Retina displays
 - Support for more than just `min-width` and `max-width`
-- suggestions?
+- Suggestions?

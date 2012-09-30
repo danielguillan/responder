@@ -1,6 +1,6 @@
 root = File.join(File.dirname(__FILE__), "..")
 
-require "respondto/version"
+require "responder/version"
 require "compass"
 
 module Sass::Script::Functions
@@ -14,6 +14,6 @@ module Sass::Script::Functions
   declare :regex, :args => [:string, :string]
 end
 
-Compass::Frameworks.register("respondto",
+Compass::Frameworks.register("responder",
   :stylesheets_directory => File.join(root,"scss")
 )
