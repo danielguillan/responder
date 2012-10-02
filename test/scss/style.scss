@@ -16,6 +16,9 @@ $green: #a7e040;
 
 body {
 	font: 16px/21px 'Helvetica Neue', Arial, sans-serif;
+	@include respond-to(mobile-only) {
+		font-size: 95%;
+	}
 }
 
 .wrapper {
@@ -23,6 +26,8 @@ body {
 	padding: 0 1em;
 	max-width: 1000px;
 }
+
+tr > td:first-child { width: 80%;  }
 
 // =============================================================================
 // Respond-to Media Queries

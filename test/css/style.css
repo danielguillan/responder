@@ -2,338 +2,349 @@
 body {
   font: 16px/21px "Helvetica Neue", Arial, sans-serif;
 }
+@media (min-width: 320px) and (max-width: 600px) {
+  /* line 17, ../scss/style.scss */
+  body {
+    font-size: 95%;
+  }
+}
 
-/* line 21, ../scss/style.scss */
+/* line 24, ../scss/style.scss */
 .wrapper {
   margin: 0 auto;
   padding: 0 1em;
   max-width: 1000px;
 }
 
-/* line 40, ../scss/style.scss */
+/* line 30, ../scss/style.scss */
+tr > td:first-child {
+  width: 80%;
+}
+
+/* line 45, ../scss/style.scss */
 .mq-mixins-test {
   width: 100%;
 }
-/* line 46, ../scss/style.scss */
+/* line 51, ../scss/style.scss */
 .mq-mixins-test tbody .response-example {
   text-align: center;
   color: #ccc;
 }
-/* line 49, ../scss/style.scss */
+/* line 54, ../scss/style.scss */
 .mq-mixins-test tbody .response-example .isResponding {
   display: none;
 }
 @media (min-width: 320px) and (max-width: 600px) {
-  /* line 55, ../scss/style.scss */
+  /* line 60, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile .isInactive {
     display: none;
   }
 }
 @media (min-width: 320px) and (max-width: 480px) {
-  /* line 60, ../scss/style.scss */
+  /* line 65, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-portrait {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-portrait .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-portrait .isInactive {
     display: none;
   }
 }
 @media (min-width: 480px) and (max-width: 600px) {
-  /* line 65, ../scss/style.scss */
+  /* line 70, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-landscape {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-landscape .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-landscape .isInactive {
     display: none;
   }
 }
 @media (min-width: 600px) and (max-width: 992px) {
-  /* line 71, ../scss/style.scss */
+  /* line 76, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet .isInactive {
     display: none;
   }
 }
 @media (min-width: 600px) and (max-width: 768px) {
-  /* line 77, ../scss/style.scss */
+  /* line 82, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-portrait {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-portrait .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-portrait .isInactive {
     display: none;
   }
 }
 @media (min-width: 768px) and (max-width: 992px) {
-  /* line 83, ../scss/style.scss */
+  /* line 88, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-landscape {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-landscape .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-landscape .isInactive {
     display: none;
   }
 }
 @media (min-width: 992px) {
-  /* line 89, ../scss/style.scss */
+  /* line 94, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-desktop {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-desktop .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-desktop .isInactive {
     display: none;
   }
 }
 @media (min-width: 320px) {
-  /* line 98, ../scss/style.scss */
+  /* line 103, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-and-up {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-and-up .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-and-up .isInactive {
     display: none;
   }
 }
 @media (min-width: 320px) {
-  /* line 103, ../scss/style.scss */
+  /* line 108, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-portrait-and-up {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-portrait-and-up .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-portrait-and-up .isInactive {
     display: none;
   }
 }
 @media (min-width: 480px) {
-  /* line 108, ../scss/style.scss */
+  /* line 113, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-landscape-and-up {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-landscape-and-up .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-landscape-and-up .isInactive {
     display: none;
   }
 }
 @media (min-width: 600px) {
-  /* line 114, ../scss/style.scss */
+  /* line 119, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-and-up {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-and-up .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-and-up .isInactive {
     display: none;
   }
 }
 @media (min-width: 600px) {
-  /* line 120, ../scss/style.scss */
+  /* line 125, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-portrait-and-up {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-portrait-and-up .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-portrait-and-up .isInactive {
     display: none;
   }
 }
 @media (min-width: 768px) {
-  /* line 126, ../scss/style.scss */
+  /* line 131, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-landscape-and-up {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-landscape-and-up .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-landscape-and-up .isInactive {
     display: none;
   }
 }
 @media (min-width: 992px) {
-  /* line 132, ../scss/style.scss */
+  /* line 137, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-desktop-and-up {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-desktop-and-up .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-desktop-and-up .isInactive {
     display: none;
   }
 }
 @media (max-width: 600px) {
-  /* line 141, ../scss/style.scss */
+  /* line 146, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-and-below {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-and-below .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-and-below .isInactive {
     display: none;
   }
 }
 @media (max-width: 480px) {
-  /* line 146, ../scss/style.scss */
+  /* line 151, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-portrait-and-below {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-portrait-and-below .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-portrait-and-below .isInactive {
     display: none;
   }
 }
 @media (max-width: 600px) {
-  /* line 151, ../scss/style.scss */
+  /* line 156, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-landscape-and-below {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-landscape-and-below .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-landscape-and-below .isInactive {
     display: none;
   }
 }
 @media (max-width: 992px) {
-  /* line 157, ../scss/style.scss */
+  /* line 162, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-and-below {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-and-below .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-and-below .isInactive {
     display: none;
   }
 }
 @media (max-width: 768px) {
-  /* line 163, ../scss/style.scss */
+  /* line 168, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-portrait-and-below {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-portrait-and-below .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-portrait-and-below .isInactive {
     display: none;
   }
 }
 @media (max-width: 992px) {
-  /* line 169, ../scss/style.scss */
+  /* line 174, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-landscape-and-below {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-landscape-and-below .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-landscape-and-below .isInactive {
     display: none;
   }
 }
 @media (min-width: 992px) {
-  /* line 175, ../scss/style.scss */
+  /* line 180, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-desktop-and-below {
     background: #a7e040;
     color: white;
   }
-  /* line 36, ../scss/style.scss */
+  /* line 41, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-desktop-and-below .isResponding {
     display: inline;
   }
-  /* line 37, ../scss/style.scss */
+  /* line 42, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-desktop-and-below .isInactive {
     display: none;
   }
