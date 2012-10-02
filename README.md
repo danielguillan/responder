@@ -14,10 +14,6 @@ In your project's config.rb file add:
 
 	require "responder"
 
-Install the Compass extension:
-
-	$ compass install responder
-
 Finally import responder into your sass code
 
 	@import "responder";
