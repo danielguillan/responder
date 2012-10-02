@@ -3,7 +3,7 @@
 //
 // =============================================================================
 
-@import "respond-to";
+@import "responder";
 
 @include respond-to-breakpoints( mobile-portrait 320px,
 								 mobile-landscape 480px,

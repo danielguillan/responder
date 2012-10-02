@@ -1,47 +1,5 @@
 // =============================================================================
-// Media Queries
-//
-// Magic media queries for your Compass project. You define the breakpoints,
-// Respond-to takes care of the rest.
-//
-// More info, installation and usage:
-// https://github.com/danielguillan/respond-to
-//
-// Table of contents:
-// 1. Variables
-// 2. Initialization
-// 3. Breakpoint Groups
-// 4. Respond-to mixin
-//
-// =============================================================================
-
-@import 'functions';
-
-// =============================================================================
-// 1. Variables
-// =============================================================================
-
-$breakpoint-names: ();
-$breakpoint-values: ();
-$breakpoint-groups: ();
-
-// =============================================================================
-// 2. Initialization
-// =============================================================================
-
-@mixin respond-to-breakpoints($breakpoints...) {
-
-	@if length($breakpoints) > 1 {
-		$breakpoint-names: getBreakpointNames($breakpoints);
-		$breakpoint-values: getBreakpointValues($breakpoints);
-		$breakpoint-groups: createBreakpointGroups($breakpoint-names,$breakpoint-values);
-	}@else {
-		@warn 'respond-to-breakpoints requires at least 2 breakpoints';
-	}
-}
-
-// =============================================================================
-// 3. Respond-to mixin
+// Respond-to mixin
 // =============================================================================
 
 @mixin respond-to($breakpoint) {
@@ -49,7 +7,7 @@ $breakpoint-groups: ();
 	$breakpoint-info: getBreakpointInfo($breakpoint);
 
 	@if $breakpoint-info == 'error' {
-		@warn '[ERROR] Invalid breakpoint paramenter';
+		@warn '[ERROR] Invalid breakpoint parameter';
 	} @else {
 		$breakpoint-name: nth($breakpoint-info, 1);
 		$breakpoint-extend: nth($breakpoint-info, 2);

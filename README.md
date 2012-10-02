@@ -6,7 +6,7 @@ Forget about multiple variable declarations, long lists of unmanageable, inexten
 
 ## Installation
 
-Install the respond-to gem:
+Install the responder gem:
 
     $ gem install responder
 
@@ -14,9 +14,13 @@ In your project's config.rb file add:
 
 	require "responder"
 
-Finally install the Compass extension:
+Install the Compass extension:
 
 	$ compass install responder
+
+Finally import responder into your sass code
+
+	@import "responder";
 
 ## Usage
 
@@ -90,7 +94,7 @@ Given the example breakpoint list above, `respond-to(mobile-only)` will output t
 
 min-width value is the first breakpoint of the group and max-width is the last one. It's that simple.
 
-**NOTE:** You can define more than two breakpoints per group, Responder will pick the smallest breakpoint and the bigger breakpoint to create the group.
+**NOTE:** Currently you're only able to define two breakpoints per group but very soon you'll be able to create as many as you need and Responder will pick the smallest breakpoint and the bigger breakpoint to create the group.
 
 ### 3. There's no #3. Enjoy and build amazing stuff
 
@@ -99,6 +103,5 @@ min-width value is the first breakpoint of the group and max-width is the last o
 
 ## What's next?
 
-- Respond-to Retina displays
-- Support for more than just `min-width` and `max-width`
-- Suggestions?
+- Support for groups with more than 2 breakpoints
+- Support for more media features (height, device-dimensions, orientation, retina displays, …)
