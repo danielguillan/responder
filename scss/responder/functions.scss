@@ -46,29 +46,42 @@
 // =============================================================================
 
 @function createBreakpointGroups($breakpoint-names, $breakpoint-values) {
+	$captured-groups: ();
+	$new-group: ();
 	$groups: ();
-	$total-groups: 0;
-	$last: 0;
 
+	// Create a list with all the captured groups breakpoint names and indexes
 	@for $i from 1 through length($breakpoint-names) {
 		$group: regex(nth($breakpoint-names,$i), '([a-z]+)?\-');
-		$repeated: false;
-
 		@if $group != '' {
+			$group: join($group, $i, space);
+			$captured-groups: append($captured-groups, $group, comma);
+		}
+	}
 
-			// Check if we already found this group
-			@each $saved-group in $groups {
-				@if $group == nth($saved-group, 1) {
-					$repeated: true;
-				}
-			}
+	// Save a list of groups with min and max values
+	// eg: foo 100px 200px, bar 200px 300px;
+	@for $i from 1 through length($captured-groups) {
 
-			// If this is a new group add it to the list
-			@if $repeated != true {
-				$group: join($group, nth($breakpoint-values, $i) nth($breakpoint-values, ($i + 2)), space);
-				$groups: append($groups, $group , comma );
-				$total-groups: $total-groups + 1;
-			}
+		$current-group: nth($captured-groups, $i);
+		$current-group-name: nth($current-group,1);
+		$current-group-index: nth($current-group,2);
+
+		// Initial group
+		@if $i == 1 {
+			$new-group: $current-group-name;
+			$new-group: append($new-group, nth($breakpoint-values, $current-group-index), space);
+		// New and last groups
+		} @else if $current-group-name != nth($new-group, 1) or $i == length($captured-groups) {
+			// Find the previous breakpoint value (max-width for the group)
+			$previous-breakpoint-value: nth($breakpoint-values, ($current-group-index));
+			// The current group is ready
+			$new-group: append($new-group, $previous-breakpoint-value, space);
+			// Save the final group in the groups list
+			$groups: append($groups, $new-group, comma);
+			// Start a new group adding its name and min value
+			$new-group: $current-group-name;
+			$new-group: append($new-group, nth($breakpoint-values, $current-group-index), space);
 		}
 	}
 
