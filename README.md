@@ -99,5 +99,4 @@ min-width value is the first breakpoint of the group and max-width is the last o
 
 ## What's next?
 
-- Support for groups with more than 2 breakpoints
 - Support for more media features (height, device-dimensions, orientation, retina displays, …)
