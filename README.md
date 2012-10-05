@@ -90,7 +90,7 @@ Given the example breakpoint list above, `respond-to(mobile-only)` will output t
 
 min-width value is the first breakpoint of the group and max-width is the last one. It's that simple.
 
-**NOTE:** Currently you're only able to define two breakpoints per group but very soon you'll be able to create as many as you need and Responder will pick the smallest breakpoint and the bigger breakpoint to create the group.
+**NOTE:** You're able to create as many breakpoints as you need per group.
 
 ### 3. There's no #3. Enjoy and build amazing stuff
 
