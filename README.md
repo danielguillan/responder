@@ -22,7 +22,7 @@ Finally import responder into your sass code
 
 ### 1. Define your own breakpoints
 
-Include the `respond-to-breakpoints()` mixin in your stylesheet and pass a list of desired breakpoints. Define as many as you need and give each one of them a name and a min-width value.
+Include the `respond-to-breakpoints()` mixin in your stylesheet and pass your list of custom breakpoints. Define as many as you need and give each one of them a name and a min-width value.
 
 *An example:*
 
@@ -32,7 +32,7 @@ Include the `respond-to-breakpoints()` mixin in your stylesheet and pass a list 
 									 tablet-landscape 768px,
 							 		 desktop 990px);
 
-**Important:** Your list of breakpoints must always start with the smallest breakpoint and end with the bigger one.
+**Important:** Start with the smallest breakpoint and grow your list from there up to the bigger one.
 
 ### 2. Using the respond-to mixin
 
@@ -88,9 +88,7 @@ Given the example breakpoint list above, `respond-to(mobile-only)` will output t
 
 	@media screen and (min-width: 320px) and (max-width: 480px) { … }
 
-min-width value is the first breakpoint of the group and max-width is the last one. It's that simple.
-
-**NOTE:** You're able to create as many breakpoints as you need per group.
+min-width value is the first breakpoint of the group and max-width is the last one. You can create as many breakpoints as you need for each group. It's that simple.
 
 ### 3. There's no #3. Enjoy and build amazing stuff
 
