@@ -79,7 +79,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media (min-width: 600px) and (max-width: 768px) {
+@media (min-width: 600px) and (max-width: 992px) {
   /* line 76, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet {
     background: #a7e040;
@@ -289,7 +289,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   /* line 162, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-and-below {
     background: #a7e040;

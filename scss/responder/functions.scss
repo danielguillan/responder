@@ -73,10 +73,18 @@
 			$new-group: append($new-group, nth($breakpoint-values, $current-group-index), space);
 		// New and last groups
 		} @else if $current-group-name != nth($new-group, 1) or $i == length($captured-groups) {
-			// Find the previous breakpoint value (max-width for the group)
-			$previous-breakpoint-value: nth($breakpoint-values, ($current-group-index));
+
+			// Find the current breakpoint value (max-width for the group)
+			$current-breakpoint-value: nth($breakpoint-values, ($current-group-index));
+
+			// If it's the last group and there's a higer breakpoint
+			@if $i == length($captured-groups) and length($breakpoint-values) > length($captured-groups) {
+				// Find the current breakpoint value (max-width for the group)
+				$current-breakpoint-value: nth($breakpoint-values, ($current-group-index + 1));
+			}
+
 			// The current group is ready
-			$new-group: append($new-group, $previous-breakpoint-value, space);
+			$new-group: append($new-group, $current-breakpoint-value, space);
 			// Save the final group in the groups list
 			$groups: append($groups, $new-group, comma);
 			// Start a new group adding its name and min value
@@ -84,7 +92,6 @@
 			$new-group: append($new-group, nth($breakpoint-values, $current-group-index), space);
 		}
 	}
-
 	@return $groups;
 }
 
