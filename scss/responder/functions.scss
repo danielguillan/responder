@@ -78,7 +78,7 @@
 			$current-breakpoint-value: nth($breakpoint-values, ($current-group-index));
 
 			// If it's the last group and there's a higer breakpoint
-			@if $i == length($captured-groups) and length($breakpoint-values) > length($captured-groups) {
+			@if $i == length($captured-groups) and $current-group-index < length($breakpoint-values) {
 				// Find the current breakpoint value (max-width for the group)
 				$current-breakpoint-value: nth($breakpoint-values, ($current-group-index + 1));
 			}
