@@ -5,7 +5,7 @@
 
 @import "responder";
 
-@include respond-to-breakpoints( mobile-portrait 320px,
+@include responder-breakpoints( mobile-portrait 320px,
 								 mobile-landscape 480px,
 								 tablet-portrait 600px,
 								 tablet-landscape 768px,

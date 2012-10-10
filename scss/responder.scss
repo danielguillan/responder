@@ -1,8 +1,8 @@
 // =============================================================================
 // Responder
 //
-// Magic media queries for your Compass project. You define the breakpoints,
-// Respond-to takes care of the rest.
+// Magic media queries for your Compass project. You define the breakpoints, 
+// Responder takes care of the rest.
 //
 // More info, installation and usage:
 // https://github.com/danielguillan/respond-to
@@ -35,7 +35,7 @@ $responder-ems-context: $base-font-size !default;
 // 2. Initialization
 // =============================================================================
 
-@mixin respond-to-breakpoints($breakpoints...) {
+@mixin responder-breakpoints($breakpoints...) {
 
 	@if length($breakpoints) > 1 {
 		$breakpoint-names: getBreakpointNames($breakpoints);

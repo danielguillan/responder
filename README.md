@@ -22,11 +22,11 @@ Finally import responder into your sass code
 
 ### 1. Define your own breakpoints
 
-Include the `respond-to-breakpoints()` mixin in your stylesheet and pass your list of custom breakpoints. Define as many as you need and give each one of them a name and a min-width value in pixels.
+Include the `responder-breakpoints()` mixin in your stylesheet and pass your list of custom breakpoints. Define as many as you need and give each one of them a name and a min-width value in pixels.
 
 *An example:*
 
-	@include respond-to-breakpoints( mobile-portrait 320px,
+	@include responder-breakpoints( mobile-portrait 320px,
 									 mobile-landscape 480px,
 									 tablet-portrait 600px,
 									 tablet-landscape 768px,
