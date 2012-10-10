@@ -142,8 +142,8 @@
 // Returns the breakpoint value in pixels or ems.
 // =============================================================================
 
-@function getSize($value, $context: $base-font-size) {
-	@if $convert-to-ems == true {
+@function getSize($value, $context: $responder-ems-context) {
+	@if $responder-use-ems == true {
 		@return $value / $context +em;
 	} @else {
 		@return $value;

@@ -40,11 +40,11 @@ Responder will do the math for you and convert your breakpoint values into ems. 
 
 **Need to change the context?**
 
-	$ems-context: $my-own-context;
+	$responder-ems-context: $my-own-context;
 
 **I Prefer pixel breakpoints!** Easy:
 
-	$convert-to-ems: false;
+	$responder-use-ems: false;
 	
 
 ### 2. Using the respond-to mixin

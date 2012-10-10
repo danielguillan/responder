@@ -28,8 +28,8 @@ $breakpoint-groups: ();
 // Configurable variables
 // =============================================================================
 
-$convert-to-ems: true !default;
-$ems-context: $base-font-size !default;
+$responder-use-ems: true !default;
+$responder-ems-context: $base-font-size !default;
 
 // =============================================================================
 // 2. Initialization
