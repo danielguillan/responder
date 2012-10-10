@@ -2,7 +2,7 @@
 
 Magic media queries for your Compass project. You define the breakpoints, Responder takes care of the rest.
 
-Forget about multiple variable declarations, long lists of unmanageable, inextensible and unreusable mixins. Responder is the only media queries mixin you'll ever need. And it's always ready to use.
+Forget about variables and long lists of unmanageable and unreusable mixins. Responder is the only media queries mixin you'll ever need. And it's always ready to use.
 
 ## Installation
 
@@ -22,7 +22,7 @@ Finally import responder into your sass code
 
 ### 1. Define your own breakpoints
 
-Include the `respond-to-breakpoints()` mixin in your stylesheet and pass your list of custom breakpoints. Define as many as you need and give each one of them a name and a min-width value.
+Include the `respond-to-breakpoints()` mixin in your stylesheet and pass your list of custom breakpoints. Define as many as you need and give each one of them a name and a min-width value in pixels.
 
 *An example:*
 
@@ -33,6 +33,19 @@ Include the `respond-to-breakpoints()` mixin in your stylesheet and pass your li
 							 		 desktop 990px);
 
 **Important:** Start with the smallest breakpoint and grow your list from there up to the bigger one.
+
+#### Ems by default
+
+Responder will do the math for you and convert your breakpoint values into ems. By default Responder uses the Compass $base-font-size configurable variable as the context.
+
+**Need to change the context?**
+
+	$ems-context: $my-own-context;
+
+**I Prefer pixel breakpoints!** Easy:
+
+	$convert-to-ems: false;
+	
 
 ### 2. Using the respond-to mixin
 
