@@ -13,6 +13,7 @@
 //
 // =============================================================================
 
+@import 'compass';
 @import 'responder/respond-to';
 @import 'responder/functions';
 
@@ -23,6 +24,12 @@
 $breakpoint-names: ();
 $breakpoint-values: ();
 $breakpoint-groups: ();
+
+// Configurable variables
+// =============================================================================
+
+$convert-to-ems: true !default;
+$ems-context: $base-font-size !default;
 
 // =============================================================================
 // 2. Initialization

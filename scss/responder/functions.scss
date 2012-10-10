@@ -6,6 +6,7 @@
 // 2. Get breakpoint Values list
 // 3. Get breakpoint Groups list with min and max values
 // 4. Get the Respond-to breakpoint
+// 4. Get size (px or em)
 //
 // =============================================================================
 
@@ -134,4 +135,17 @@
 
 	@warn '[ERROR] "' + $breakpoint + '"" is not a valid parameter. Please, check the breakpoint name and also make sure you used -only, -and-up, or -and-below]';
 	@return 'error';
+}
+
+// =============================================================================
+// 5. Get size
+// Returns the breakpoint value in pixels or ems.
+// =============================================================================
+
+@function getSize($value, $context: $base-font-size) {
+	@if $convert-to-ems == true {
+		@return $value / $context +em;
+	} @else {
+		@return $value;
+	}
 }

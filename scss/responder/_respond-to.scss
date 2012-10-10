@@ -39,12 +39,11 @@
 		}
 
 		@if $breakpoint-extend == only {
-			@media (min-width: $min-width) and (max-width: ($max-width - 1)) { @content; }
+			@media (min-width: getSize($min-width)) and (max-width: getSize($max-width - 1)) { @content; }
 		} @else if $breakpoint-extend == and-up {
-			@media (min-width: $min-width) { @content; }
+			@media (min-width: getSize($min-width)) { @content; }
 		} @else if $breakpoint-extend == and-below {
-			$max-width: $max-width - 1;
-			@media (max-width: ($max-width - 1)) { @content; }
+			@media (max-width: getSize($max-width - 1)) { @content; }
 		}
 	}
 }
