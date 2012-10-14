@@ -2,7 +2,7 @@
 
 Magic media queries for your Compass project. You define the breakpoints, Responder takes care of the rest.
 
-Forget about variables and long lists of unmanageable and unreusable mixins. Responder is the only media queries mixin you'll ever need. And it's always ready to use.
+Forget about long lists of unmanageable and unreusable variables and mixins. Responder is the simplest and fastest way to start using media queries in your project in a matter of seconds.
 
 ## Installation
 
@@ -42,7 +42,7 @@ Responder will do the math for you and convert your breakpoint values into ems. 
 
 	$responder-ems-context: $my-own-context;
 
-**I Prefer pixel breakpoints!** Easy:
+**I prefer pixel breakpoints!** Easy:
 
 	$responder-use-ems: false;
 	
