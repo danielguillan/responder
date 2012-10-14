@@ -2,7 +2,7 @@
 
 Magic media queries for your Compass project. You define the breakpoints, Responder takes care of the rest.
 
-Forget about long lists of unmanageable and unreusable variables and mixins. Responder is the simplest and fastest way to start using media queries in your project in a matter of seconds.
+Forget about long lists of unmanageable and unreusable variables and mixins. Responder is the simplest and fastest way to start using media queries in your project. In a matter of seconds you're ready to go.
 
 ## Installation
 
