@@ -57,7 +57,7 @@ Yep, that was it. Your mixin is ready to use.
 This is how you use respond-to in your SASS stylesheet:
 
 	selector {
-		@include respond-to(breakpointName-extend) {
+		@include respond-to(breakpointName-extension) {
 			// rules…
 		}
 	}

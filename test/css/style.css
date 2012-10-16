@@ -2,7 +2,7 @@
 body {
   font: 16px/21px "Helvetica Neue", Arial, sans-serif;
 }
-@media print and (min-width: 20em) and (max-width: 37.4375em) {
+@media screen and (min-width: 20em) and (max-width: 37.4375em) {
   /* line 17, ../scss/style.scss */
   body {
     font-size: 95%;
@@ -34,7 +34,7 @@ tr > td:first-child {
 .mq-mixins-test tbody .response-example .isResponding {
   display: none;
 }
-@media print and (min-width: 20em) and (max-width: 37.4375em) {
+@media screen and (min-width: 20em) and (max-width: 37.4375em) {
   /* line 60, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile {
     background: #a7e040;
@@ -49,7 +49,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (min-width: 20em) and (max-width: 29.9375em) {
+@media screen and (min-width: 20em) and (max-width: 29.9375em) {
   /* line 65, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-portrait {
     background: #a7e040;
@@ -64,7 +64,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (min-width: 30em) and (max-width: 37.4375em) {
+@media screen and (min-width: 30em) and (max-width: 37.4375em) {
   /* line 70, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-landscape {
     background: #a7e040;
@@ -79,7 +79,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (min-width: 37.5em) and (max-width: 61.9375em) {
+@media screen and (min-width: 37.5em) and (max-width: 61.9375em) {
   /* line 76, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet {
     background: #a7e040;
@@ -94,7 +94,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (min-width: 37.5em) and (max-width: 47.9375em) {
+@media screen and (min-width: 37.5em) and (max-width: 47.9375em) {
   /* line 82, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-portrait {
     background: #a7e040;
@@ -109,7 +109,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (min-width: 48em) and (max-width: 61.9375em) {
+@media screen and (min-width: 48em) and (max-width: 61.9375em) {
   /* line 88, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-landscape {
     background: #a7e040;
@@ -124,7 +124,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (min-width: 62em) {
+@media screen and (min-width: 62em) {
   /* line 94, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-desktop {
     background: #a7e040;
@@ -139,7 +139,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (min-width: 20em) {
+@media screen and (min-width: 20em) {
   /* line 103, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-and-up {
     background: #a7e040;
@@ -154,7 +154,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (min-width: 20em) {
+@media screen and (min-width: 20em) {
   /* line 108, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-portrait-and-up {
     background: #a7e040;
@@ -169,7 +169,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (min-width: 30em) {
+@media screen and (min-width: 30em) {
   /* line 113, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-landscape-and-up {
     background: #a7e040;
@@ -184,7 +184,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (min-width: 37.5em) {
+@media screen and (min-width: 37.5em) {
   /* line 119, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-and-up {
     background: #a7e040;
@@ -199,7 +199,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (min-width: 37.5em) {
+@media screen and (min-width: 37.5em) {
   /* line 125, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-portrait-and-up {
     background: #a7e040;
@@ -214,7 +214,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (min-width: 48em) {
+@media screen and (min-width: 48em) {
   /* line 131, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-landscape-and-up {
     background: #a7e040;
@@ -229,7 +229,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (min-width: 62em) {
+@media screen and (min-width: 62em) {
   /* line 137, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-desktop-and-up {
     background: #a7e040;
@@ -244,7 +244,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (max-width: 37.4375em) {
+@media screen and (max-width: 37.4375em) {
   /* line 146, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-and-below {
     background: #a7e040;
@@ -259,7 +259,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (max-width: 29.9375em) {
+@media screen and (max-width: 29.9375em) {
   /* line 151, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-portrait-and-below {
     background: #a7e040;
@@ -274,7 +274,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (max-width: 37.4375em) {
+@media screen and (max-width: 37.4375em) {
   /* line 156, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-mobile-landscape-and-below {
     background: #a7e040;
@@ -289,7 +289,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (max-width: 61.9375em) {
+@media screen and (max-width: 61.9375em) {
   /* line 162, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-and-below {
     background: #a7e040;
@@ -304,7 +304,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (max-width: 47.9375em) {
+@media screen and (max-width: 47.9375em) {
   /* line 168, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-portrait-and-below {
     background: #a7e040;
@@ -319,7 +319,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (max-width: 61.9375em) {
+@media screen and (max-width: 61.9375em) {
   /* line 174, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-tablet-landscape-and-below {
     background: #a7e040;
@@ -334,7 +334,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media print and (max-width: 61.9375em) {
+@media screen and (max-width: 61.9375em) {
   /* line 180, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-desktop-and-below {
     background: #a7e040;

@@ -102,11 +102,11 @@
 
 @function getBreakpointInfo($breakpoint) {
 
-	// capture the extend (only, and-up or and-below)
-	$extend: regex($breakpoint, '((and-)?[a-z]+)$');
+	// capture the extension (only, and-up or and-below)
+	$extension: regex($breakpoint, '((and-)?[a-z]+)$');
 
 	// capture the breakpoint name
-	$root: regex($breakpoint, '(.*?)-'+ $extend + '$');
+	$root: regex($breakpoint, '(.*?)-'+ $extension + '$');
 
 	// Check if it's a normal breakpoint
 	@for $i from 1 through length($breakpoint-names) {
@@ -114,7 +114,7 @@
 		@if $root == nth($breakpoint-names, $i) {
 			$group: false;
 			$groupid: false;
-			$br: join($root, $extend, space);
+			$br: join($root, $extension, space);
 			$br: join($br, $group, space);
 			$br: join($br, $groupid, space);
 			@return $br;
@@ -126,7 +126,7 @@
 		@if $root == nth(nth($breakpoint-groups, $i),1) {
 			$group: true;
 			$groupid: $i;
-			$br: join($root, $extend, space);
+			$br: join($root, $extension, space);
 			$br: join($br, $group, space);
 			$br: join($br, $groupid, space);
 			@return $br;
