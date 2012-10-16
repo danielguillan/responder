@@ -33,17 +33,17 @@
 			}
 
 		// If it's a breakpoint group
-		}@else {
+		} @else {
 			$min-width: nth( nth($breakpoint-groups, $breakpoint-group-id), 2);
 			$max-width: nth( nth($breakpoint-groups, $breakpoint-group-id), 3);
 		}
 
 		@if $breakpoint-extend == only {
-			@media (min-width: getSize($min-width)) and (max-width: getSize($max-width - 1)) { @content; }
+			@media #{$responder-media-type} and (min-width: getSize($min-width)) and (max-width: getSize($max-width - 1)) { @content; }
 		} @else if $breakpoint-extend == and-up {
-			@media (min-width: getSize($min-width)) { @content; }
+			@media #{$responder-media-type} and (min-width: getSize($min-width)) { @content; }
 		} @else if $breakpoint-extend == and-below {
-			@media (max-width: getSize($max-width - 1)) { @content; }
+			@media #{$responder-media-type} and (max-width: getSize($max-width - 1)) { @content; }
 		}
 	}
 }

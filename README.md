@@ -34,19 +34,22 @@ Include the `responder-breakpoints()` mixin in your stylesheet and pass your lis
 
 **Important:** Start with the smallest breakpoint and grow your list from there up to the bigger one.
 
-#### Ems by default
+#### Settings
 
-Responder will do the math for you and convert your breakpoint values into ems. By default Responder uses the Compass $base-font-size configurable variable as the context.
+Responder will do the math for you and convert your breakpoint values into ems. By default Responder uses the Compass `$base-font-size` configurable variable as the context and sets the media type as `screen`.
 
-**Need to change the context?**
+**Set your own context**
 
-	$responder-ems-context: $my-own-context;
+	$responder-ems-context: $my-own-context; // Defaults to $base-font-size
 
-**I prefer pixel breakpoints!** Easy:
+**Prefer pixel breakpoints?** Easy:
 
-	$responder-use-ems: false;
+	$responder-use-ems: false; // Defaults to true
 	
+**Change the default media type **
 
+	$responder-media-type: screen; // Defaults to screen
+	
 ### 2. Using the respond-to mixin
 
 Yep, that was it. Your mixin is ready to use.
