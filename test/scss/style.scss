@@ -54,132 +54,17 @@ tr > td:first-child { width: 80%;  }
 			.isResponding { display: none; }
 		}
 
-		// Only
-		// =============================================================================
+		// List of classes (which are the same as the breakpoints)
+		$classes: mobile, mobile-portrait, mobile-landscape, tablet, tablet-portrait, tablet-landscape, desktop;
+		$extends: -only, -and-up, -and-below;
 
-		.respond-to-mobile {
-			@include respond-to(mobile-only) {
-				@include is-responding;
-			}
-		}
-		.respond-to-mobile-portrait {
-			@include respond-to(mobile-portrait-only) {
-				@include is-responding;
-			}
-		}
-		.respond-to-mobile-landscape {
-			@include respond-to(mobile-landscape-only) {
-				@include is-responding;
-			}
-		}
-
-		.respond-to-tablet {
-			@include respond-to(tablet-only) {
-				@include is-responding;
-			}
-		}
-
-		.respond-to-tablet-portrait {
-			@include respond-to(tablet-portrait-only) {
-				@include is-responding;
-			}
-		}
-
-		.respond-to-tablet-landscape {
-			@include respond-to(tablet-landscape-only) {
-				@include is-responding;
-			}
-		}
-
-		.respond-to-desktop {
-			@include respond-to(desktop-only) {
-				@include is-responding;
-			}
-		}
-
-		// And Up
-		// =============================================================================
-
-		.respond-to-mobile-and-up {
-			@include respond-to(mobile-and-up) {
-				@include is-responding;
-			}
-		}
-		.respond-to-mobile-portrait-and-up {
-			@include respond-to(mobile-portrait-and-up) {
-				@include is-responding;
-			}
-		}
-		.respond-to-mobile-landscape-and-up {
-			@include respond-to(mobile-landscape-and-up) {
-				@include is-responding;
-			}
-		}
-
-		.respond-to-tablet-and-up {
-			@include respond-to(tablet-and-up) {
-				@include is-responding;
-			}
-		}
-
-		.respond-to-tablet-portrait-and-up {
-			@include respond-to(tablet-portrait-and-up) {
-				@include is-responding;
-			}
-		}
-
-		.respond-to-tablet-landscape-and-up {
-			@include respond-to(tablet-landscape-and-up) {
-				@include is-responding;
-			}
-		}
-
-		.respond-to-desktop-and-up {
-			@include respond-to(desktop-and-up) {
-				@include is-responding;
-			}
-		}
-
-		// And Below
-		// =============================================================================
-
-		.respond-to-mobile-and-below {
-			@include respond-to(mobile-and-below) {
-				@include is-responding;
-			}
-		}
-		.respond-to-mobile-portrait-and-below {
-			@include respond-to(mobile-portrait-and-below) {
-				@include is-responding;
-			}
-		}
-		.respond-to-mobile-landscape-and-below {
-			@include respond-to(mobile-landscape-and-below) {
-				@include is-responding;
-			}
-		}
-
-		.respond-to-tablet-and-below {
-			@include respond-to(tablet-and-below) {
-				@include is-responding;
-			}
-		}
-
-		.respond-to-tablet-portrait-and-below {
-			@include respond-to(tablet-portrait-and-below) {
-				@include is-responding;
-			}
-		}
-
-		.respond-to-tablet-landscape-and-below {
-			@include respond-to(tablet-landscape-and-below) {
-				@include is-responding;
-			}
-		}
-
-		.respond-to-desktop-and-below {
-			@include respond-to(desktop-and-below) {
-				@include is-responding;
+		@each $class in $classes {
+			@each $extend in $extends {
+				.respond-to-#{$class + $extend} {
+					@include respond-to(#{$class + $extend} ) {
+						@include is-responding;
+					}
+				}
 			}
 		}
 	}
