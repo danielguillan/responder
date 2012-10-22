@@ -45,11 +45,11 @@ Responder will do the math for you and convert your breakpoint values into ems. 
 **Prefer pixel breakpoints?** Easy:
 
 	$responder-use-ems: false; // Defaults to true
-	
-**Change the default media type **
 
-	$responder-media-type: screen; // Defaults to screen
-	
+**Change the default media type**
+
+	$responder-media-type: tv; // Defaults to screen
+
 ### 2. Using the respond-to mixin
 
 Yep, that was it. Your mixin is ready to use.
