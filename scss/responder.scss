@@ -31,6 +31,8 @@ $breakpoint-groups: ();
 $responder-use-ems: true !default;
 $responder-ems-context: $base-font-size !default;
 $responder-media-type: screen !default;
+$old-ie-support: false !default;
+$old-ie-breakpoint: false !default;
 
 // =============================================================================
 // 2. Initialization

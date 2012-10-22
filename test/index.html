@@ -4,7 +4,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Responder testing</title>
+	<!--[if lte IE 8]>
+	<link href="/css/style-old-ie.css" rel="stylesheet">
+	<![endif]-->
+	<!--[if gt IE 8]><!-->
 	<link href="/css/style.css" rel="stylesheet">
+	<!--<![endif]-->
 </head>
 <body>
 	<div class="wrapper">
@@ -148,6 +153,26 @@
 				</tr>
 			</tbody>
 		</table>
+
+		<hr>
+
+		<h3>Old IE</h3>
+
+		<table class="mq-mixins-test">
+			<thead>
+				<tr>
+					<th>Mixin</th>
+					<th>Response</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><code class="language-css">respond-to(ie)</code></td>
+					<td class="response-example respond-to-ie"><span class="isInactive">inactive</span> <span class="isResponding">responding</span></td>
+				</tr>
+			</tbody>
+		</table>
+
 	</div> <!-- /wrapper -->
 
 </body>

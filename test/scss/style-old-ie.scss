@@ -1,0 +1,13 @@
+// =============================================================================
+// Respond-to IE Test Bed
+//
+// =============================================================================
+
+// Enable support for old IE
+$old-ie-support: true;
+
+// Set the breakpoint for old IE
+$old-ie-breakpoint: tablet-portrait;
+
+// Import the main stylesheet
+@import "style";

@@ -67,5 +67,11 @@ tr > td:first-child { width: 80%;  }
 				}
 			}
 		}
+
+		.respond-to-ie {
+			@include respond-to(ie) {
+				@include is-responding;
+			}
+		}
 	}
 }
