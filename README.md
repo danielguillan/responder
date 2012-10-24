@@ -106,11 +106,69 @@ Given the example breakpoint list above, `respond-to(mobile-only)` will output t
 
 min-width value is the first breakpoint of the group and max-width is the last one. You can create as many breakpoints as you need for each group. It's that simple.
 
-### 3. There's no #3. Enjoy and build amazing stuff
+### 3. Mobile first & Old IE
 
-… And contribute to make Responder even better!
+If you're designing your site "mobile first" and prefer to serve a separate CSS to browsers that don't support media queries (IE8 and below), Responder gets you covered! 
 
+_(NOTE: This step is completely optional)_
+
+#### Old IE only stylesheet
+
+Just create a new SASS stylesheet and add the following lines:
+
+old-ie.scss:
+
+	// Enable support for old IE
+	$old-ie-support: true;
+
+	// Set the breakpoint for old IE
+	$old-ie-breakpoint: desktop;
+
+	// Import the main stylesheet
+	@import "style";
+
+
+`$old-ie-support` Enables support for old-IE, the main styles and old-IE-specific styles will be compiled to your new old-IE-only stylesheet.
+
+`$old-ie-breakpoint` Styles from this breakpoint will be compiled (without media queries) into the IE-only stylesheet.
+
+That's it. Three lines of code and you get a new stylesheet for browsers that don't support media queries.
+
+#### respond-to(ie)
+
+Whenever you need to add old-IE specific rules, simply use the respond-to() mixin as you would with your media queries in your main stylesheet.
+
+An example on style.scss:
+
+	.block {
+		padding: 10px;
+		
+		 // Only gets compiled on you main stylesheet (style.css)
+		@include respon-to(tablet-only) {
+			background: blue;
+		}
+
+		// Gets compiled on you main stylesheet (style.css)
+		// AND on ie-only.css (without the media query)
+		@include respond-to(desktop-and-up) {
+			background-color: yellow;
+		}
+		
+		// Only gets compiled on ie-only.css
+		@include respond-to(ie) {
+			border: solid 1px red;
+		}
+	}
+
+The resulting old-ie.css is:
+
+	.block {
+		padding: 10px;
+		background-color: yellow;
+		border: solid 1px red;
+	}
 
 ## What's next?
 
 - Support for more media features (height, device-dimensions, orientation, retina displays, …)
+- Combined media queries? _e.g. respond-to(mobile-only && retina)_

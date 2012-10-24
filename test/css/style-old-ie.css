@@ -29,42 +29,42 @@ tr > td:first-child {
   display: none;
 }
 /* line 63, ../scss/style.scss */
-.mq-mixins-test tbody .respond-to-tablet-portrait-only {
+.mq-mixins-test tbody .respond-to-desktop-only {
   background: #a7e040;
   color: white;
 }
 /* line 41, ../scss/style.scss */
-.mq-mixins-test tbody .respond-to-tablet-portrait-only .isResponding {
+.mq-mixins-test tbody .respond-to-desktop-only .isResponding {
   display: inline;
 }
 /* line 42, ../scss/style.scss */
-.mq-mixins-test tbody .respond-to-tablet-portrait-only .isInactive {
+.mq-mixins-test tbody .respond-to-desktop-only .isInactive {
   display: none;
 }
 /* line 63, ../scss/style.scss */
-.mq-mixins-test tbody .respond-to-tablet-portrait-and-up {
+.mq-mixins-test tbody .respond-to-desktop-and-up {
   background: #a7e040;
   color: white;
 }
 /* line 41, ../scss/style.scss */
-.mq-mixins-test tbody .respond-to-tablet-portrait-and-up .isResponding {
+.mq-mixins-test tbody .respond-to-desktop-and-up .isResponding {
   display: inline;
 }
 /* line 42, ../scss/style.scss */
-.mq-mixins-test tbody .respond-to-tablet-portrait-and-up .isInactive {
+.mq-mixins-test tbody .respond-to-desktop-and-up .isInactive {
   display: none;
 }
 /* line 63, ../scss/style.scss */
-.mq-mixins-test tbody .respond-to-tablet-portrait-and-below {
+.mq-mixins-test tbody .respond-to-desktop-and-below {
   background: #a7e040;
   color: white;
 }
 /* line 41, ../scss/style.scss */
-.mq-mixins-test tbody .respond-to-tablet-portrait-and-below .isResponding {
+.mq-mixins-test tbody .respond-to-desktop-and-below .isResponding {
   display: inline;
 }
 /* line 42, ../scss/style.scss */
-.mq-mixins-test tbody .respond-to-tablet-portrait-and-below .isInactive {
+.mq-mixins-test tbody .respond-to-desktop-and-below .isInactive {
   display: none;
 }
 /* line 71, ../scss/style.scss */
