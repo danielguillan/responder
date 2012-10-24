@@ -102,7 +102,7 @@ Groups are sets of breakpoints whose names share the same root followed by a das
 
 Given the example breakpoint list above, `respond-to(mobile-only)` will output the following css:
 
-	@media screen and (min-width: 320px) and (max-width: 480px) { … }
+	@media screen and (min-width: 320px) and (max-width: 599px) { … }
 
 min-width value is the first breakpoint of the group and max-width is the last one. You can create as many breakpoints as you need for each group. It's that simple.
 
