@@ -63,9 +63,9 @@ This is how you use respond-to in your SASS stylesheet:
 	}
 For each breakpoint you've defined you now have 3 available parameters for the respond-to mixin:
 
-- *breakpointName***-only**
-- *breakpointName***-and-up**
-- *breakpointName***-and-below**
+- breakpointName**-only**
+- breakpointName**-and-up**
+- breakpointName**-and-below**
 
 *An example:*
 
@@ -104,7 +104,7 @@ Given the example breakpoint list above, `respond-to(mobile-only)` will output t
 
 	@media screen and (min-width: 320px) and (max-width: 599px) { … }
 
-min-width value is the first breakpoint of the group and max-width is the last one. You can create as many breakpoints as you need for each group. It's that simple.
+You can create as many breakpoints as you need for each group. It's that simple.
 
 ### 3. Mobile first & Old IE
 
@@ -144,7 +144,7 @@ An example on style.scss:
 		padding: 10px;
 		
 		 // Only gets compiled on you main stylesheet (style.css)
-		@include respon-to(tablet-only) {
+		@include respond-to(tablet-only) {
 			background: blue;
 		}
 
