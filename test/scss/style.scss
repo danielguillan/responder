@@ -68,6 +68,12 @@ tr > td:first-child { width: 80%;  }
 			}
 		}
 
+		.respond-to-retina {
+			@include respond-to('retina') {
+				@include is-responding;
+			}
+		}
+
 		.respond-to-ie {
 			@include respond-to(ie) {
 				@include is-responding;

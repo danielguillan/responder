@@ -16,8 +16,19 @@
 		@if $old-ie-support == true {
 			@content;
 		}
+	// Respond to retina displays
+	} @else if $breakpoint-info == 'retina' {
+	    @media
+	    only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	    only screen and (   min--moz-device-pixel-ratio: 1.5),
+	    only screen and (     -o-min-device-pixel-ratio: 3/2),
+	    only screen and (        min-device-pixel-ratio: 2),
+	    only screen and (                min-resolution: 1.5dppx) {
+			@content;
+	   }
 
-	} @else {
+
+	@else {
 
 		$breakpoint-name: nth($breakpoint-info, 1);
 		$breakpoint-extend: nth($breakpoint-info, 2);
@@ -57,36 +68,49 @@
 				@warn "[ERROR] "+ $old-ie-breakpoint +" is not a valid breakpoint name for $old-ie-breakpoint. Valid breakpoint names are: "+ $breakpoint-names
 			}
 
-
 		} @else {
+			$breakpoint-name: nth($breakpoint-info, 1);
+			$breakpoint-extend: nth($breakpoint-info, 2);
+			$breakpoint-group: nth($breakpoint-info, 3);
+			$breakpoint-group-id: nth($breakpoint-info, 4);
 
-			// If it's a regular breakpoint
-			@if $breakpoint-group == false {
-				$min-width: nth($breakpoint-values, index($breakpoint-names, $breakpoint-name));
+			$min-width: 0;
+			$max-width: 0;
 
-				// Only set a max-width if it's not the last breakpoint
-				@if (index($breakpoint-names, $breakpoint-name) + 1) <= length($breakpoint-values) {
-					$max-width: nth($breakpoint-values, (index($breakpoint-names, $breakpoint-name) + 1));
-				} @else {
-					@if $breakpoint-extend == and-below {
-						$max-width: nth($breakpoint-values, (index($breakpoint-names, $breakpoint-name)));
+			@if $old-ie-support == true {
+				@if $breakpoint-name == $old-ie-breakpoint or $breakpoint-name == $old-ie-breakpoint {
+					@content;
+				}
+			} @else {
+
+				// If it's a regular breakpoint
+				@if $breakpoint-group == false {
+					$min-width: nth($breakpoint-values, index($breakpoint-names, $breakpoint-name));
+
+					// Only set a max-width if it's not the last breakpoint
+					@if (index($breakpoint-names, $breakpoint-name) + 1) <= length($breakpoint-values) {
+						$max-width: nth($breakpoint-values, (index($breakpoint-names, $breakpoint-name) + 1));
 					} @else {
-						$breakpoint-extend: and-up;
+						@if $breakpoint-extend == and-below {
+							$max-width: nth($breakpoint-values, (index($breakpoint-names, $breakpoint-name)));
+						} @else {
+							$breakpoint-extend: and-up;
+						}
 					}
+
+				// If it's a breakpoint group
+				} @else {
+					$min-width: nth( nth($breakpoint-groups, $breakpoint-group-id), 2);
+					$max-width: nth( nth($breakpoint-groups, $breakpoint-group-id), 3);
 				}
 
-			// If it's a breakpoint group
-			} @else {
-				$min-width: nth( nth($breakpoint-groups, $breakpoint-group-id), 2);
-				$max-width: nth( nth($breakpoint-groups, $breakpoint-group-id), 3);
-			}
-
-			@if $breakpoint-extend == only {
-				@media #{$responder-media-type} and (min-width: getSize($min-width)) and (max-width: getSize($max-width - 1)) { @content; }
-			} @else if $breakpoint-extend == and-up {
-				@media #{$responder-media-type} and (min-width: getSize($min-width)) { @content; }
-			} @else if $breakpoint-extend == and-below {
-				@media #{$responder-media-type} and (max-width: getSize($max-width - 1)) { @content; }
+				@if $breakpoint-extend == only {
+					@media #{$responder-media-type} and (min-width: getSize($min-width)) and (max-width: getSize($max-width - 1)) { @content; }
+				} @else if $breakpoint-extend == and-up {
+					@media #{$responder-media-type} and (min-width: getSize($min-width)) { @content; }
+				} @else if $breakpoint-extend == and-below {
+					@media #{$responder-media-type} and (max-width: getSize($max-width - 1)) { @content; }
+				}
 			}
 		}
 	}

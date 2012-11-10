@@ -105,6 +105,8 @@
 
 	@if $breakpoint == ie {
 		@return ie;
+	} @else if $breakpoint == retina {
+		@return retina;
 	} @else {
 
 		// capture the extension (only, and-up or and-below)
