@@ -28,9 +28,36 @@
 		$max-width: 0;
 
 		@if $old-ie-support == true {
-			@if $breakpoint-name == $old-ie-breakpoint or $breakpoint-name == $old-ie-breakpoint {
-				@content;
+
+			@if yepnope($breakpoint-names, $old-ie-breakpoint) {
+
+				// Get the value of the old-ie breakpoint
+				$old-ie-breakpoint-value: nth($breakpoint-values, index($breakpoint-names, $old-ie-breakpoint));
+
+				$breakpoint-value: null;
+
+				@if $breakpoint-group == true {
+					// Get the group min-width
+					$breakpoint-value: nth( nth($breakpoint-groups, $breakpoint-group-id), 2);
+				} @else {
+					// Get the breakpoint value
+					$breakpoint-value: nth($breakpoint-values, index($breakpoint-names, $breakpoint-name));
+				}
+
+				// Check if the media query should respond
+				@if $breakpoint-extend == 'only' and $breakpoint-value == $old-ie-breakpoint-value {
+					@content;
+				} @else if $breakpoint-extend == 'and-up' and $old-ie-breakpoint-value >= $breakpoint-value{
+					@content;
+				} @else if $breakpoint-extend == 'and-below' and $old-ie-breakpoint-value <= $breakpoint-value {
+					@content;
+				}
+			} @else {
+				// Invlaid $old-ie-breakpoint value
+				@warn "[ERROR] "+ $old-ie-breakpoint +" is not a valid breakpoint name for $old-ie-breakpoint. Valid breakpoint names are: "+ $breakpoint-names
 			}
+
+
 		} @else {
 
 			// If it's a regular breakpoint

@@ -29,29 +29,133 @@ tr > td:first-child {
   display: none;
 }
 /* line 63, ../scss/style.scss */
-.mq-mixins-test tbody .respond-to-desktop-only {
+.mq-mixins-test tbody .respond-to-mobile-and-up {
   background: #a7e040;
   color: white;
 }
 /* line 41, ../scss/style.scss */
-.mq-mixins-test tbody .respond-to-desktop-only .isResponding {
+.mq-mixins-test tbody .respond-to-mobile-and-up .isResponding {
   display: inline;
 }
 /* line 42, ../scss/style.scss */
-.mq-mixins-test tbody .respond-to-desktop-only .isInactive {
+.mq-mixins-test tbody .respond-to-mobile-and-up .isInactive {
   display: none;
 }
 /* line 63, ../scss/style.scss */
-.mq-mixins-test tbody .respond-to-desktop-and-up {
+.mq-mixins-test tbody .respond-to-mobile-portrait-and-up {
   background: #a7e040;
   color: white;
 }
 /* line 41, ../scss/style.scss */
-.mq-mixins-test tbody .respond-to-desktop-and-up .isResponding {
+.mq-mixins-test tbody .respond-to-mobile-portrait-and-up .isResponding {
   display: inline;
 }
 /* line 42, ../scss/style.scss */
-.mq-mixins-test tbody .respond-to-desktop-and-up .isInactive {
+.mq-mixins-test tbody .respond-to-mobile-portrait-and-up .isInactive {
+  display: none;
+}
+/* line 63, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-mobile-landscape-and-up {
+  background: #a7e040;
+  color: white;
+}
+/* line 41, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-mobile-landscape-and-up .isResponding {
+  display: inline;
+}
+/* line 42, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-mobile-landscape-and-up .isInactive {
+  display: none;
+}
+/* line 63, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-only {
+  background: #a7e040;
+  color: white;
+}
+/* line 41, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-only .isResponding {
+  display: inline;
+}
+/* line 42, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-only .isInactive {
+  display: none;
+}
+/* line 63, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-and-up {
+  background: #a7e040;
+  color: white;
+}
+/* line 41, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-and-up .isResponding {
+  display: inline;
+}
+/* line 42, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-and-up .isInactive {
+  display: none;
+}
+/* line 63, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-and-below {
+  background: #a7e040;
+  color: white;
+}
+/* line 41, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-and-below .isResponding {
+  display: inline;
+}
+/* line 42, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-and-below .isInactive {
+  display: none;
+}
+/* line 63, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-portrait-only {
+  background: #a7e040;
+  color: white;
+}
+/* line 41, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-portrait-only .isResponding {
+  display: inline;
+}
+/* line 42, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-portrait-only .isInactive {
+  display: none;
+}
+/* line 63, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-portrait-and-up {
+  background: #a7e040;
+  color: white;
+}
+/* line 41, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-portrait-and-up .isResponding {
+  display: inline;
+}
+/* line 42, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-portrait-and-up .isInactive {
+  display: none;
+}
+/* line 63, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-portrait-and-below {
+  background: #a7e040;
+  color: white;
+}
+/* line 41, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-portrait-and-below .isResponding {
+  display: inline;
+}
+/* line 42, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-portrait-and-below .isInactive {
+  display: none;
+}
+/* line 63, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-landscape-and-below {
+  background: #a7e040;
+  color: white;
+}
+/* line 41, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-landscape-and-below .isResponding {
+  display: inline;
+}
+/* line 42, ../scss/style.scss */
+.mq-mixins-test tbody .respond-to-tablet-landscape-and-below .isInactive {
   display: none;
 }
 /* line 63, ../scss/style.scss */

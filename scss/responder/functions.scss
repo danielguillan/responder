@@ -6,7 +6,8 @@
 // 2. Get breakpoint Values list
 // 3. Get breakpoint Groups list with min and max values
 // 4. Get the Respond-to breakpoint
-// 4. Get size (px or em)
+// 5. Get size (px or em)
+// 6. Yepnope
 //
 // =============================================================================
 
@@ -113,16 +114,13 @@
 		$root: regex($breakpoint, '(.*?)-'+ $extension + '$');
 
 		// Check if it's a normal breakpoint
-		@for $i from 1 through length($breakpoint-names) {
-
-			@if $root == nth($breakpoint-names, $i) {
-				$group: false;
-				$groupid: false;
-				$br: join($root, $extension, space);
-				$br: join($br, $group, space);
-				$br: join($br, $groupid, space);
-				@return $br;
-			}
+		@if yepnope($breakpoint-names, $root) {
+			$group: false;
+			$groupid: false;
+			$br: join($root, $extension, space);
+			$br: join($br, $group, space);
+			$br: join($br, $groupid, space);
+			@return $br;
 		}
 
 		// Check if it's a group
@@ -153,4 +151,18 @@
 	} @else {
 		@return $value;
 	}
+}
+
+// =============================================================================
+// 6. Yepnope
+// Take a $list, return true if any $args are present.
+// =============================================================================
+
+@function yepnope($list, $args) {
+  $list: compact($list);
+  $check: false;
+  @each $arg in $args {
+    $check: if(index($list,$arg), true, $check);
+  }
+  @return $check;
 }
