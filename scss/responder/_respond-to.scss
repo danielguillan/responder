@@ -27,8 +27,7 @@
 			@content;
 	   }
 
-
-	@else {
+	} @else {
 
 		$breakpoint-name: nth($breakpoint-info, 1);
 		$breakpoint-extend: nth($breakpoint-info, 2);
