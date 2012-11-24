@@ -106,7 +106,15 @@ Given the example breakpoint list above, `respond-to(mobile-only)` will output t
 
 You can create as many breakpoints as you need for each group. It's that simple.
 
-### 3. Mobile first & Old IE
+### 3. Retina displays
+
+Target retina displays very easely using Responder's future proof media query.
+
+	@include respond-to(retina) {
+		// retina sharpness goes here
+	}
+
+### 4. Mobile first & Old IE
 
 If you're designing your site "mobile first" and prefer to serve a separate CSS to browsers that don't support media queries (IE8 and below), Responder gets you covered! 
 
@@ -170,5 +178,5 @@ The resulting old-ie.css is:
 
 ## What's next?
 
-- Support for more media features (height, device-dimensions, orientation, retina displays, …)
+- Support for more media features (height, device-dimensions, orientation, …)
 - Combined media queries? _e.g. respond-to(mobile-only && retina)_
