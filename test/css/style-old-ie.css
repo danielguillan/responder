@@ -171,21 +171,6 @@ tr > td:first-child {
 .mq-mixins-test tbody .respond-to-desktop-and-below .isInactive {
   display: none;
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 1.5dppx) {
-  /* line 71, ../scss/style.scss */
-  .mq-mixins-test tbody .respond-to-retina {
-    background: #a7e040;
-    color: white;
-  }
-  /* line 41, ../scss/style.scss */
-  .mq-mixins-test tbody .respond-to-retina .isResponding {
-    display: inline;
-  }
-  /* line 42, ../scss/style.scss */
-  .mq-mixins-test tbody .respond-to-retina .isInactive {
-    display: none;
-  }
-}
 /* line 77, ../scss/style.scss */
 .mq-mixins-test tbody .respond-to-ie {
   background: #a7e040;

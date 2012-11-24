@@ -1,8 +1,22 @@
 // =============================================================================
 // Respond-to mixin
+//
+// Table of contents:
+// 1. Get breakpoint info
+// 2. respond-to(ie)
+// 3. respond-to(retina)
+// 4. respond-to($breakpoint)
+//  4.1. Old-IE support
+//  4.2. Breakpoints and groups
+// 5. respond-to min and max mixins
+//
 // =============================================================================
 
 @mixin respond-to($breakpoint) {
+
+	// =============================================================================
+	// 1. Get breakpoint info
+	// =============================================================================
 
 	$breakpoint-info: getBreakpointInfo($breakpoint);
 
@@ -10,22 +24,30 @@
 	@if $breakpoint-info == 'error' {
 		@warn '[ERROR] Invalid breakpoint parameter';
 
+	// =============================================================================
+	// 2. respond-to(ie)
+	// =============================================================================
+
 	// Respond to IE
 	} @else if $breakpoint-info == 'ie' {
 		// Only print content if support is true
 		@if $old-ie-support == true {
 			@content;
 		}
+
+	// =============================================================================
+	// 3. respond-to(retina)
+	// =============================================================================
+
 	// Respond to retina displays
 	} @else if $breakpoint-info == 'retina' {
-	    @media
-	    only screen and (-webkit-min-device-pixel-ratio: 1.5),
-	    only screen and (   min--moz-device-pixel-ratio: 1.5),
-	    only screen and (     -o-min-device-pixel-ratio: 3/2),
-	    only screen and (        min-device-pixel-ratio: 2),
-	    only screen and (                min-resolution: 1.5dppx) {
-			@content;
-	   }
+		@if $old-ie-support != true { // should not compile on Old-IE stylesheets
+			@include respond-to-retina { @content; }
+		}
+
+	// =============================================================================
+	// 4. respond-to($breakpoint)
+	// =============================================================================
 
 	} @else {
 
@@ -37,6 +59,10 @@
 		$min-width: 0;
 		$max-width: 0;
 
+		// =============================================================================
+		// 4.1. Old IE support
+		// =============================================================================
+
 		@if $old-ie-support == true {
 
 			@if yepnope($breakpoint-names, $old-ie-breakpoint) {
@@ -44,6 +70,7 @@
 				// Get the value of the old-ie breakpoint
 				$old-ie-breakpoint-value: nth($breakpoint-values, index($breakpoint-names, $old-ie-breakpoint));
 
+				// Don't know why this prevents throwing an error :S
 				$breakpoint-value: null;
 
 				@if $breakpoint-group == true {
@@ -57,15 +84,19 @@
 				// Check if the media query should respond
 				@if $breakpoint-extend == 'only' and $breakpoint-value == $old-ie-breakpoint-value {
 					@content;
-				} @else if $breakpoint-extend == 'and-up' and $old-ie-breakpoint-value >= $breakpoint-value{
+				} @else if $breakpoint-extend == 'and-up' and $old-ie-breakpoint-value >= $breakpoint-value {
 					@content;
 				} @else if $breakpoint-extend == 'and-below' and $old-ie-breakpoint-value <= $breakpoint-value {
 					@content;
 				}
 			} @else {
-				// Invlaid $old-ie-breakpoint value
+				// Invalid $old-ie-breakpoint value
 				@warn "[ERROR] "+ $old-ie-breakpoint +" is not a valid breakpoint name for $old-ie-breakpoint. Valid breakpoint names are: "+ $breakpoint-names
 			}
+
+		// =============================================================================
+		// 4.2. Breakpoints and groups
+		// =============================================================================
 
 		} @else {
 			$breakpoint-name: nth($breakpoint-info, 1);
@@ -104,13 +135,39 @@
 				}
 
 				@if $breakpoint-extend == only {
-					@media #{$responder-media-type} and (min-width: getSize($min-width)) and (max-width: getSize($max-width - 1)) { @content; }
+					@include respond-to-min-and-max-width($min-width, $max-width){ @content };
 				} @else if $breakpoint-extend == and-up {
-					@media #{$responder-media-type} and (min-width: getSize($min-width)) { @content; }
+					@include respond-to-min-width($min-width){ @content };
 				} @else if $breakpoint-extend == and-below {
-					@media #{$responder-media-type} and (max-width: getSize($max-width - 1)) { @content; }
+					@include respond-to-max-width($max-width){ @content };
 				}
 			}
 		}
+	}
+}
+
+// =============================================================================
+// 5. respond-to min and max mixins
+// =============================================================================
+
+@mixin respond-to-min-and-max-width($min-width, $max-width) {
+	@media only #{$responder-media-type}
+	 and (min-width: getSize($min-width))
+	 and (max-width: getSize($max-width - 1)) {
+		@content;
+	}
+}
+
+@mixin respond-to-min-width($min-width) {
+	@media only #{$responder-media-type}
+	 and (min-width: getSize($min-width)) {
+		@content;
+	}
+}
+
+@mixin respond-to-max-width($max-width) {
+	@media only #{$responder-media-type}
+	 and (max-width: getSize($max-width - 1)) {
+		@content;
 	}
 }
