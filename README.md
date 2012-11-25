@@ -108,7 +108,7 @@ You can create as many breakpoints as you need for each group. It's that simple.
 
 ### 3. Retina displays
 
-Target retina displays very easely using Responder's future proof media query.
+Target retina displays easily using Responder's future proof media query.
 
 	@include respond-to(retina) {
 		// retina sharpness goes here
