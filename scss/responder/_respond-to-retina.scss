@@ -1,14 +1,15 @@
 // =============================================================================
 // Respond to retina
+//
+// Future proof Retina media query based on Brett Jankord's research:
+// http://www.brettjankord.com/2012/11/28/cross-browser-retinahigh-resolution-media-queries/
+//
 // =============================================================================
 
 @mixin respond-to-retina {
     @media
-    only screen and (-webkit-min-device-pixel-ratio: 1.5),
-    only screen and (   min--moz-device-pixel-ratio: 1.5),
-    only screen and (     -o-min-device-pixel-ratio: 3/2),
-    only screen and (        min-device-pixel-ratio: 2),
-    only screen and (                min-resolution: 1.5dppx) {
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-resolution: #{(96 * $responder-retina-pixel-ratio)}dpi) {
         @content;
    }
 }
