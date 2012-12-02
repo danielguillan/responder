@@ -349,7 +349,7 @@ tr > td:first-child {
     display: none;
   }
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 190dpi) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
   /* line 71, ../scss/style.scss */
   .mq-mixins-test tbody .respond-to-retina {
     background: #a7e040;

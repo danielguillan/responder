@@ -8,7 +8,7 @@
 
 @mixin respond-to-retina {
     @media
-    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (-webkit-min-device-pixel-ratio: $responder-retina-pixel-ratio),
     only screen and (min-resolution: #{(96 * $responder-retina-pixel-ratio)}dpi) {
         @content;
    }
