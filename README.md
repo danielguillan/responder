@@ -50,6 +50,10 @@ Responder will do the math for you and convert your breakpoint values into ems. 
 
 	$responder-media-type: tv; // Defaults to screen
 
+**Change the default pixel ratio for the retina media query**
+
+	$responder-retina-pixel-ratio: tv; // Defaults to 2
+
 ### 2. Using the respond-to mixin
 
 Yep, that was it. Your mixin is ready to use.
