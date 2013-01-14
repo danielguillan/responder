@@ -52,7 +52,7 @@ Responder will do the math for you and convert your breakpoint values into ems. 
 
 **Change the default pixel ratio for the retina media query**
 
-	$responder-retina-pixel-ratio: tv; // Defaults to 2
+	$responder-retina-pixel-ratio: 1.5; // Defaults to 2
 
 ### 2. Using the respond-to mixin
 
