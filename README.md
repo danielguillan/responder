@@ -67,9 +67,9 @@ This is how you use respond-to in your SASS stylesheet:
 	}
 For each breakpoint you've defined you now have 3 available parameters for the respond-to mixin:
 
-- breakpointName**-only**
-- breakpointName**-and-up**
-- breakpointName**-and-below**
+- breakpointName-only
+- breakpointName-and-up
+- breakpointName-and-below
 
 *An example:*
 
