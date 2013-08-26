@@ -42,13 +42,6 @@ $old-ie-breakpoint: false !default;
 
 @mixin responder-breakpoints($breakpoints...) {
 
-    // If passing a list instead of multiple arguments we need to "extract" that list
-    // from the arglist ex: @include responder-breakpoints($breakpoints) instead of
-    // @include responder-breakpoints(s 320px, m 600px, l 900px)
-    @if length($breakpoints) == 1 and type-of(nth($breakpoints,1)) == 'list' {
-        $breakpoints: nth($breakpoints, 1);
-    }
-
 	@if length($breakpoints) > 1 {
 		$breakpoint-names: getBreakpointNames($breakpoints);
 		$breakpoint-values: getBreakpointValues($breakpoints);
