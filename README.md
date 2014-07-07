@@ -1,5 +1,9 @@
 # Responder
 
+**NO LONGER MAINTAINED** use Breakpoint instead https://github.com/team-sass/breakpoint
+
+----
+
 Magic media queries for your Compass project. You define the breakpoints, Responder takes care of the rest.
 
 Forget about long lists of unmanageable and unreusable variables and mixins. Responder is the simplest and fastest way to start using media queries in your project. In a matter of seconds you're ready to go.
@@ -179,8 +183,3 @@ The resulting old-ie.css is:
 		background-color: yellow;
 		border: solid 1px red;
 	}
-
-## What's next?
-
-- Support for more media features (height, device-dimensions, orientation, …)
-- Combined media queries? _e.g. respond-to(mobile-only && retina)_
