@@ -1,8 +1,9 @@
-# Responder
-
 **NO LONGER MAINTAINED** use Breakpoint instead https://github.com/team-sass/breakpoint
 
 ----
+
+# Responder
+
 
 Magic media queries for your Compass project. You define the breakpoints, Responder takes care of the rest.
 
